@@ -4,6 +4,10 @@
  */
 package cadastro_transportadora.view;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author marco
@@ -26,55 +30,96 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        PainelTelas = new javax.swing.JDesktopPane();
+        desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        menuCadastrar = new javax.swing.JMenu();
         btnVeiculos = new javax.swing.JMenuItem();
         btnProdutos = new javax.swing.JMenuItem();
         btnEmbalagens = new javax.swing.JMenuItem();
         btnResumo = new javax.swing.JMenu();
         btnSobre = new javax.swing.JMenu();
         btnSair = new javax.swing.JMenu();
-
-        jMenu1.setText("jMenu1");
+        btnSairJanela = new javax.swing.JMenuItem();
+        btnSairAplicacao = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
         setBackground(new java.awt.Color(255, 255, 255));
         setFont(new java.awt.Font("Microsoft JhengHei", 0, 10)); // NOI18N
 
-        javax.swing.GroupLayout PainelTelasLayout = new javax.swing.GroupLayout(PainelTelas);
-        PainelTelas.setLayout(PainelTelasLayout);
-        PainelTelasLayout.setHorizontalGroup(
-            PainelTelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
+        desktop.setLayout(desktopLayout);
+        desktopLayout.setHorizontalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 601, Short.MAX_VALUE)
         );
-        PainelTelasLayout.setVerticalGroup(
-            PainelTelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 287, Short.MAX_VALUE)
+        desktopLayout.setVerticalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 464, Short.MAX_VALUE)
         );
 
-        jMenu2.setText("Cadastrar");
+        menuCadastrar.setText("Cadastrar");
 
         btnVeiculos.setText("Veiculos");
-        jMenu2.add(btnVeiculos);
+        btnVeiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVeiculosActionPerformed(evt);
+            }
+        });
+        menuCadastrar.add(btnVeiculos);
 
         btnProdutos.setText("Produtos");
-        jMenu2.add(btnProdutos);
+        btnProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdutosActionPerformed(evt);
+            }
+        });
+        menuCadastrar.add(btnProdutos);
 
         btnEmbalagens.setText("Embalagens");
-        jMenu2.add(btnEmbalagens);
+        btnEmbalagens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmbalagensActionPerformed(evt);
+            }
+        });
+        menuCadastrar.add(btnEmbalagens);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menuCadastrar);
 
         btnResumo.setText("Painel de Resumo");
         jMenuBar1.add(btnResumo);
 
         btnSobre.setText("Sobre");
+        btnSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(btnSobre);
 
         btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+
+        btnSairJanela.setText("Desta janela");
+        btnSairJanela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairJanelaActionPerformed(evt);
+            }
+        });
+        btnSair.add(btnSairJanela);
+
+        btnSairAplicacao.setText("Da aplicação");
+        btnSairAplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairAplicacaoActionPerformed(evt);
+            }
+        });
+        btnSair.add(btnSairAplicacao);
+
         jMenuBar1.add(btnSair);
 
         setJMenuBar(jMenuBar1);
@@ -83,15 +128,63 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PainelTelas)
+            .addComponent(desktop)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PainelTelas)
+            .addComponent(desktop)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSobreActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnSairJanelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairJanelaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnSairJanelaActionPerformed
+
+    private void btnSairAplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairAplicacaoActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairAplicacaoActionPerformed
+
+    private void btnVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculosActionPerformed
+        TelaIntCadastrarVeiculos telaInterna = new TelaIntCadastrarVeiculos();
+        desktop.add(telaInterna);
+        telaInterna.setVisible(true);
+        telaInterna.setClosable(true);
+    }//GEN-LAST:event_btnVeiculosActionPerformed
+
+    private void btnProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutosActionPerformed
+        TelaIntCadastrarProdutos telaInterna = new TelaIntCadastrarProdutos();
+        desktop.add(telaInterna);
+        telaInterna.setVisible(true);
+        telaInterna.setClosable(true);
+         try {
+            telaInterna.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnProdutosActionPerformed
+
+    private void btnEmbalagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmbalagensActionPerformed
+        TelaIntCadastrarEmbalagens telaInterna = new TelaIntCadastrarEmbalagens();
+        desktop.add(telaInterna);
+        telaInterna.setVisible(true);
+        telaInterna.setClosable(true);
+        try {
+            telaInterna.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }//GEN-LAST:event_btnEmbalagensActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,15 +222,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane PainelTelas;
     private javax.swing.JMenuItem btnEmbalagens;
     private javax.swing.JMenuItem btnProdutos;
     private javax.swing.JMenu btnResumo;
     private javax.swing.JMenu btnSair;
+    private javax.swing.JMenuItem btnSairAplicacao;
+    private javax.swing.JMenuItem btnSairJanela;
     private javax.swing.JMenu btnSobre;
     private javax.swing.JMenuItem btnVeiculos;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menuCadastrar;
     // End of variables declaration//GEN-END:variables
 }
