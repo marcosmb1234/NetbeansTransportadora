@@ -30,6 +30,7 @@ public class TelaIntSobreOTrabalho extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setMaximizable(true);
         setTitle("Sobre");
 
         jLabel2.setText("<html> <h3>Sistema de Gerenciamento para Transportadora</h3> <p>Este sistema tem como objetivo facilitar a gestão de uma transportadora,  permitindo o cadastro e organização dos principais elementos operacionais:</p> <ul> <li><b>Veículos:</b> Registro com placa, tipo, dimensões internas e capacidade de carga.</li> <li><b>Produtos:</b> Cadastro com tipo, lote, dimensões, peso e grau de fragilidade.</li> <li><b>Embalagens:</b> Associação com produtos, incluindo tipo, empilhamento e medidas.</li> </ul> <p>O sistema também conta com um <b>Painel de Resumo</b> que apresenta estatísticas gerais  como totais de veículos, produtos e embalagens, tipos cadastrados e mais.</p> <p>Simples, funcional e organizado, o sistema visa otimizar a rotina logística com foco em controle e eficiência.</p> </html>");

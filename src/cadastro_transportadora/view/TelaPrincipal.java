@@ -21,10 +21,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaInterna.setVisible(true);
         telaInterna.setClosable(true);
         try {
-        telaInterna.setMaximum(true); // Maximiza a tela interna
-    } catch (PropertyVetoException ex) {
-        Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    telaInterna.setMaximum(true); // Maximiza a tela interna
+} catch (PropertyVetoException ex) {
+    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+}
  
     }
     
