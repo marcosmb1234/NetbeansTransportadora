@@ -56,7 +56,6 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
 
@@ -116,13 +115,6 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
 
         btnCadastrar.setText("Cadastrar");
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
         btnLimpar.setText("Limpar");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alimentos Perecíveis", "Alimentos Não Perecíveis", "Bebidas", "Material de Limpeza", "Material de Construção", "Produtos Eletrônicos", "Eletrodomésticos", "Eletroportáteis", "Roupas", "Calçados", "Medicamentos", "Produtos Farmacêuticos", "Cosméticos", "Produtos de Higiene", "Produtos Químicos", "Materiais de Escritório", "Papelaria", "Peças Automotivas", "Equipamentos Industriais", "Brinquedos", "Ferramentas", "Produtos Agrícolas", "Grãos", "Rações", "Fertilizantes", "Sementes", "Produtos Têxteis", "Produtos Inflamáveis", "Produtos Tóxicos", "Produtos Refrigerados", "Produtos Congelados", "Produtos Recicláveis", "Gás Envasado", "Material Escolar", "Utensílios Domésticos", "Produtos Hospitalares", "Lubrificantes", "Óleos Vegetais", "Máquinas e Equipamentos", "Artigos Esportivos", "Vidros e Cristais", "Cerâmicas", "Móveis", "Colchões", "Ar Condicionado", "Produtos de Limpeza Industrial", "Produtos para Pet Shop", "Produtos de Jardinagem" }));
@@ -139,8 +131,6 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCancelar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimpar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -245,8 +235,7 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar)
-                    .addComponent(btnCancelar))
+                    .addComponent(btnLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -278,14 +267,9 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbGrauFragActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JComboBox<String> cmbGrauFrag;
     private javax.swing.JComboBox<String> jComboBox1;

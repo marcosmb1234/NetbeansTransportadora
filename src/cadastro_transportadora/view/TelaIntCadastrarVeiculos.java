@@ -53,7 +53,6 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -114,13 +113,6 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
 
         btnCadastrar.setText("Cadastrar");
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
         btnLimpar.setText("Limpar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -135,8 +127,6 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCancelar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnLimpar))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -230,8 +220,7 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar)
-                    .addComponent(btnCancelar))
+                    .addComponent(btnLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -267,14 +256,9 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLarguraActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JLabel jLabel1;

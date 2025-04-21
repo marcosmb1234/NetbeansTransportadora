@@ -46,7 +46,6 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -89,13 +88,6 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
 
         btnCadastrar.setText("Cadastrar");
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
         btnLimpar.setText("Limpar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -129,8 +121,6 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnCadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLimpar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -177,8 +167,7 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar)
-                    .addComponent(btnCancelar))
+                    .addComponent(btnLimpar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -202,10 +191,6 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
     private void chboxEmpilhavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chboxEmpilhavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chboxEmpilhavelActionPerformed
@@ -213,7 +198,6 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JCheckBox chboxEmpilhavel;
     private javax.swing.JComboBox<String> cmbProduto;

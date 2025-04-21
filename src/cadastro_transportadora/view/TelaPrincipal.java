@@ -19,9 +19,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaIntSobreOTrabalho telaInterna = new TelaIntSobreOTrabalho();
         desktop.add(telaInterna);
         telaInterna.setVisible(true);
-        telaInterna.setClosable(true);
+        telaInterna.setClosable(false);
+        telaInterna.setMaximizable(false);
         try {
-    telaInterna.setMaximum(true); // Maximiza a tela interna
+    telaInterna.setMaximum(true); //é o negocio de aumentar a tela
 } catch (PropertyVetoException ex) {
     Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
 }
@@ -35,7 +36,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     desktop.add(novaJanela);
     novaJanela.setVisible(true);
-    novaJanela.setClosable(true);
+    novaJanela.setClosable(false);
+    novaJanela.setMaximizable(false);
     try {
         novaJanela.setMaximum(true); 
     } catch (PropertyVetoException ex) {
