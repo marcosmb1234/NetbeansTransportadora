@@ -22,6 +22,9 @@ public class Produto {
     private String grauFragilidade;
     private String observacoes;
 
+    public Produto() {
+    }
+
     public Produto(int id, String nome, String descricao, String familia, String tipo, String lote, double altura, double largura, double comprimento, double peso, String grauFragilidade, String observacoes) {
         this.id = id;
         this.nome = nome;

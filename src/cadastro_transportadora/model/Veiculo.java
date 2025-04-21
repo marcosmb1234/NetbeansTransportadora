@@ -19,7 +19,8 @@ public class Veiculo {
     private double comprimentoInterno;
     private double capacidadePeso;
     private String observacoes;
-
+public Veiculo() {
+    }
     public Veiculo(int id, String nome, String placa, String modelo, String tipo, double alturaInterna, double larguraInterna, double comprimentoInterno, double capacidadePeso, String observacoes) {
         this.id = id;
         this.nome = nome;
@@ -65,6 +66,15 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+
     public double getAlturaInterna() {
         return alturaInterna;
     }
@@ -104,4 +114,5 @@ public class Veiculo {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
+    
 }

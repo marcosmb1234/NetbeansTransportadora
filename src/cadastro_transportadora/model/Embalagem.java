@@ -17,7 +17,8 @@ public class Embalagem {
     private double peso;
     private boolean empilhavel;
     private String observacoes;
-
+public Embalagem() {
+}
     public Embalagem(Produto produtoAssociado, String tipo, double altura, double largura, double comprimento, double peso, boolean empilhavel, String observacoes) {
         this.produtoAssociado = produtoAssociado;
         this.tipo = tipo;
