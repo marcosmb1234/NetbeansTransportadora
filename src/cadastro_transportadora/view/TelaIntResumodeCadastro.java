@@ -4,6 +4,11 @@
  */
 package cadastro_transportadora.view;
 
+import cadastro_transportadora.model.BancoDeDadosFake;
+import cadastro_transportadora.model.Embalagem;
+import cadastro_transportadora.model.Produto;
+import cadastro_transportadora.model.Veiculo;
+
 /**
  *
  * @author marco
@@ -16,6 +21,7 @@ public class TelaIntResumodeCadastro extends javax.swing.JInternalFrame {
     public TelaIntResumodeCadastro() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.

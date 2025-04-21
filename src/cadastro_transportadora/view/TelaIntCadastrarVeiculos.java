@@ -58,6 +58,7 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Cadastrar");
 
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caminhão Aberto", "Caminhão Baú", "Pick-up", "Van", "Carreta", "Cegonha", "Furgão", "Utilitário" }));
         cmbTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTipoActionPerformed(evt);

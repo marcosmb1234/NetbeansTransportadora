@@ -116,7 +116,7 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
 
         btnLimpar.setText("Limpar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "    CAIXA,", "    TAMBOR,", "    SACO,", "    PALETE,", "    OUTRO" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "Alimento", "Eletrônico", "Mobília", "Medicamento", "Material de Construção", "Roupa", "Cosmético", "Limpeza" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

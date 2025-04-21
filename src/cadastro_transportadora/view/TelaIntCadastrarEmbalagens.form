@@ -161,31 +161,13 @@
         <Component class="javax.swing.JComboBox" name="cmbTipo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="24">
-                <StringItem index="0" value="Caixa de Papel&#xe3;o"/>
-                <StringItem index="1" value="Caixa Pl&#xe1;stica"/>
-                <StringItem index="2" value="Caixa de Madeira"/>
-                <StringItem index="3" value="Saco de Papel"/>
-                <StringItem index="4" value="Saco de R&#xe1;fia"/>
-                <StringItem index="5" value="Saco Pl&#xe1;stico"/>
-                <StringItem index="6" value="Tambor de A&#xe7;o"/>
-                <StringItem index="7" value="Tambor Pl&#xe1;stico"/>
-                <StringItem index="8" value="Big Bag"/>
-                <StringItem index="9" value="Palete de Madeira"/>
-                <StringItem index="10" value="Palete Pl&#xe1;stico"/>
-                <StringItem index="11" value="Cont&#xea;iner Mar&#xed;timo"/>
-                <StringItem index="12" value="Cont&#xea;iner Flex&#xed;vel"/>
-                <StringItem index="13" value="Filme Stretch"/>
-                <StringItem index="14" value="Filme Termoencolh&#xed;vel"/>
-                <StringItem index="15" value="Bombona"/>
-                <StringItem index="16" value="Gal&#xe3;o"/>
-                <StringItem index="17" value="Lata"/>
-                <StringItem index="18" value="Envelope"/>
-                <StringItem index="19" value="Blister"/>
-                <StringItem index="20" value="Caixa T&#xe9;rmica"/>
-                <StringItem index="21" value="Isopor"/>
-                <StringItem index="22" value="T&#xe9;rmica com Gelo"/>
-                <StringItem index="23" value="Granel"/>
+              <StringArray count="6">
+                <StringItem index="0" value="Outro"/>
+                <StringItem index="1" value="CAIXA"/>
+                <StringItem index="2" value="    TAMBOR"/>
+                <StringItem index="3" value="    PALETE"/>
+                <StringItem index="4" value="    SACO"/>
+                <StringItem index="5" value="    CONTAINER"/>
               </StringArray>
             </Property>
           </Properties>

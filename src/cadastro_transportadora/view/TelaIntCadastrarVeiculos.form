@@ -187,6 +187,20 @@
         <Component class="javax.swing.JTextField" name="txtModelo">
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbTipo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="8">
+                <StringItem index="0" value="Caminh&#xe3;o Aberto"/>
+                <StringItem index="1" value="Caminh&#xe3;o Ba&#xfa;"/>
+                <StringItem index="2" value="Pick-up"/>
+                <StringItem index="3" value="Van"/>
+                <StringItem index="4" value="Carreta"/>
+                <StringItem index="5" value="Cegonha"/>
+                <StringItem index="6" value="Furg&#xe3;o"/>
+                <StringItem index="7" value="Utilit&#xe1;rio"/>
+              </StringArray>
+            </Property>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbTipoActionPerformed"/>
           </Events>

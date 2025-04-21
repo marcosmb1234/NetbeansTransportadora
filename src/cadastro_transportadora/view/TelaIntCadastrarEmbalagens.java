@@ -54,7 +54,7 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
 
         cmbProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caixa de Papelão", "Caixa Plástica", "Caixa de Madeira", "Saco de Papel", "Saco de Ráfia", "Saco Plástico", "Tambor de Aço", "Tambor Plástico", "Big Bag", "Palete de Madeira", "Palete Plástico", "Contêiner Marítimo", "Contêiner Flexível", "Filme Stretch", "Filme Termoencolhível", "Bombona", "Galão", "Lata", "Envelope", "Blister", "Caixa Térmica", "Isopor", "Térmica com Gelo", "Granel" }));
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "CAIXA", "    TAMBOR", "    PALETE", "    SACO", "    CONTAINER" }));
 
         chboxEmpilhavel.setText("Empilhável");
         chboxEmpilhavel.addActionListener(new java.awt.event.ActionListener() {
