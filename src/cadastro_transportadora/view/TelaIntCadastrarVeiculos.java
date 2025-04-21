@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package cadastro_transportadora.view;
-
 /**
  *
  * @author marco
@@ -59,7 +58,6 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Cadastrar");
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Caminhonete", "VUC", "Furgão", "Toco", "Truck", "3/4", "Caminhão Baú", "Caminhão Sider", "Grade Baixa", "Grade Alta", "Baú Frigorífico", "Frigorífico Truck", "Tanque", "Cisterna", "Bitrem Tanque", "Graneleiro", "Basculante", "Caçamba", "Gaiola", "Reboque para Gado", "Prancha", "Carreta Extensível", "Munck", "Porta-container", "Canavieiro", "Carreta Simples", "Bitrem", "Rodotrem", "Treminhão", "Caminhão Aberto", "Caminhão Fechado", "Carreta 2 Eixos", "Carreta 3 Eixos", "Caminhão com Reboque", "Caminhão Cegonha" }));
         cmbTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTipoActionPerformed(evt);

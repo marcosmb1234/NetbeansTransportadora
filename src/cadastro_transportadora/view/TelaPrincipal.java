@@ -38,6 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     novaJanela.setVisible(true);
     novaJanela.setClosable(false);
     novaJanela.setMaximizable(false);
+    novaJanela.setOpaque(false);
     try {
         novaJanela.setMaximum(true); 
     } catch (PropertyVetoException ex) {
@@ -62,8 +63,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home");
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 0, 0));
         setFont(new java.awt.Font("Microsoft JhengHei", 0, 10)); // NOI18N
+
+        desktop.setForeground(new java.awt.Color(0, 0, 102));
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
@@ -110,11 +113,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 btnResumoMouseClicked(evt);
             }
         });
-        btnResumo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResumoActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(btnResumo);
 
         btnSobre.setText("Sobre");
@@ -123,19 +121,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 btnSobreMouseClicked(evt);
             }
         });
-        btnSobre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSobreActionPerformed(evt);
-            }
-        });
         jMenuBar1.add(btnSobre);
 
         btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
 
         btnSairAplicacao.setText("Sair da aplicação");
         btnSairAplicacao.addActionListener(new java.awt.event.ActionListener() {
@@ -163,10 +151,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreActionPerformed
-        
-    }//GEN-LAST:event_btnSobreActionPerformed
-
     private void btnVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculosActionPerformed
         TelaIntCadastrarVeiculos telaInterna = new TelaIntCadastrarVeiculos();
         abrirJanela(telaInterna);
@@ -182,10 +166,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abrirJanela(telaInterna);
     }//GEN-LAST:event_btnEmbalagensActionPerformed
 
-    private void btnResumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResumoActionPerformed
-       
-    }//GEN-LAST:event_btnResumoActionPerformed
-
     private void btnResumoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResumoMouseClicked
         TelaIntResumodeCadastro telaInterna= new TelaIntResumodeCadastro();
         abrirJanela(telaInterna);
@@ -195,10 +175,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaIntSobreOTrabalho telaInterna = new TelaIntSobreOTrabalho();
         abrirJanela(telaInterna);
     }//GEN-LAST:event_btnSobreMouseClicked
-
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-
-    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnSairAplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairAplicacaoActionPerformed
         System.exit(0);
@@ -215,7 +191,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

@@ -187,47 +187,6 @@
         <Component class="javax.swing.JTextField" name="txtModelo">
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbTipo">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="35">
-                <StringItem index="0" value="Caminhonete"/>
-                <StringItem index="1" value="VUC"/>
-                <StringItem index="2" value="Furg&#xe3;o"/>
-                <StringItem index="3" value="Toco"/>
-                <StringItem index="4" value="Truck"/>
-                <StringItem index="5" value="3/4"/>
-                <StringItem index="6" value="Caminh&#xe3;o Ba&#xfa;"/>
-                <StringItem index="7" value="Caminh&#xe3;o Sider"/>
-                <StringItem index="8" value="Grade Baixa"/>
-                <StringItem index="9" value="Grade Alta"/>
-                <StringItem index="10" value="Ba&#xfa; Frigor&#xed;fico"/>
-                <StringItem index="11" value="Frigor&#xed;fico Truck"/>
-                <StringItem index="12" value="Tanque"/>
-                <StringItem index="13" value="Cisterna"/>
-                <StringItem index="14" value="Bitrem Tanque"/>
-                <StringItem index="15" value="Graneleiro"/>
-                <StringItem index="16" value="Basculante"/>
-                <StringItem index="17" value="Ca&#xe7;amba"/>
-                <StringItem index="18" value="Gaiola"/>
-                <StringItem index="19" value="Reboque para Gado"/>
-                <StringItem index="20" value="Prancha"/>
-                <StringItem index="21" value="Carreta Extens&#xed;vel"/>
-                <StringItem index="22" value="Munck"/>
-                <StringItem index="23" value="Porta-container"/>
-                <StringItem index="24" value="Canavieiro"/>
-                <StringItem index="25" value="Carreta Simples"/>
-                <StringItem index="26" value="Bitrem"/>
-                <StringItem index="27" value="Rodotrem"/>
-                <StringItem index="28" value="Treminh&#xe3;o"/>
-                <StringItem index="29" value="Caminh&#xe3;o Aberto"/>
-                <StringItem index="30" value="Caminh&#xe3;o Fechado"/>
-                <StringItem index="31" value="Carreta 2 Eixos"/>
-                <StringItem index="32" value="Carreta 3 Eixos"/>
-                <StringItem index="33" value="Caminh&#xe3;o com Reboque"/>
-                <StringItem index="34" value="Caminh&#xe3;o Cegonha"/>
-              </StringArray>
-            </Property>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbTipoActionPerformed"/>
           </Events>
