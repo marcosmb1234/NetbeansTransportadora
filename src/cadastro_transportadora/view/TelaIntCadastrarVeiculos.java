@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package cadastro_transportadora.view;
+
+import cadastro_transportadora.model.BancoDeDadosFake;
+import cadastro_transportadora.model.Veiculo;
+
 /**
  *
  * @author marco
@@ -15,6 +19,34 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
     public TelaIntCadastrarVeiculos() {
         initComponents();
     }
+    private void cadastrarVeiculo() {
+    try {
+        int id = Integer.parseInt(txtID.getText());
+        String nome = txtNome.getText();
+        String placa = txtPlaca.getText();
+        String modelo = txtModelo.getText();
+        String tipo = (String) cmbTipo.getSelectedItem();
+        double altura = Double.parseDouble(txtAltura.getText());
+        double largura = Double.parseDouble(txtLargura.getText());
+        double comprimento = Double.parseDouble(txtComprimento.getText());
+        double capacidade = Double.parseDouble(txtCapacidade.getText());
+        String observacoes = txtAreaObservacoes.getText();
+
+        Veiculo novoVeiculo = new Veiculo(id, nome, placa, modelo, tipo, altura, largura, comprimento, capacidade, observacoes);
+
+        BancoDeDadosFake banco = new BancoDeDadosFake();
+        boolean sucesso = banco.addVeiculo(novoVeiculo);
+
+        if (sucesso) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Veículo cadastrado com sucesso!");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar. Verifique os dados.");
+        }
+
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Preencha todos os campos numéricos corretamente.");
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,6 +143,11 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         jLabel14.setText("Dimensões Internas:");
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar");
 
@@ -254,6 +291,10 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
     private void txtLarguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLarguraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLarguraActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        cadastrarVeiculo();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

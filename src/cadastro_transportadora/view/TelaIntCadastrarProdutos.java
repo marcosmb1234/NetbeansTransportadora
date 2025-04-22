@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package cadastro_transportadora.view;
+
+import cadastro_transportadora.model.BancoDeDadosFake;
+import cadastro_transportadora.model.Produto;
+import java.awt.HeadlessException;
+
 /**
  *
  * @author marco
@@ -15,7 +20,37 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
     public TelaIntCadastrarProdutos() {
         initComponents();
     }
+private void cadastrarProduto() {
+    try {
+        int id = Integer.parseInt(txtID.getText());
+        String nome = txtNome.getText();
+        String descricao = txtDescricao.getText();
+        String familia = txtFamilia.getText();
+        String tipo = (String) jComboBox1.getSelectedItem();
+        String lote = txtLote.getText();
+        double largura = Double.parseDouble(txtLargura.getText());
+        double altura = Double.parseDouble(txtAltura.getText());
+        double comprimento = Double.parseDouble(txtComprimento.getText());
+        double peso = Double.parseDouble(txtPeso.getText());
+        String grauFragilidade = (String) cmbGrauFrag.getSelectedItem();
+        String observacoes = txtAreaObservacoes.getText();
 
+        Produto produto = new Produto(id, nome, descricao, familia, tipo, lote, altura, largura, comprimento, peso, grauFragilidade, observacoes);
+
+        BancoDeDadosFake banco = new BancoDeDadosFake();
+        boolean sucesso = banco.addProduto(produto);
+
+        if (sucesso) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto. Verifique os dados.");
+        }
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Erro nos campos numéricos: " + e.getMessage());
+    } catch (HeadlessException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -113,6 +148,11 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
         jLabel16.setText("Observações:");
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar");
 
@@ -182,13 +222,10 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addContainerGap())))
+                                .addComponent(txtLote, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,6 +305,10 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
     private void cmbGrauFragActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGrauFragActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbGrauFragActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        cadastrarProduto();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

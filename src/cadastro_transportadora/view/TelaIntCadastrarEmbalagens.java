@@ -4,6 +4,11 @@
  */
 package cadastro_transportadora.view;
 
+import cadastro_transportadora.model.BancoDeDadosFake;
+import cadastro_transportadora.model.Embalagem;
+import cadastro_transportadora.model.Produto;
+import java.util.ArrayList;
+
 /**
  *
  * @author marco
@@ -15,8 +20,46 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
      */
     public TelaIntCadastrarEmbalagens() {
         initComponents();
+        ArrayList<Produto> produtos = BancoDeDadosFake.getProdutos();
+        
+        //percorro a lista de cursos do BD
+        for (Produto produto : produtos) {
+            //para cada curso, adiciono o nome do curso no ComboBox
+            cmbProduto.addItem(produto.getNome());
+
+        }
+    }
+    private void CadastrarEmbalagem(){
+     // Verifica se há produtos disponíveis no ComboBox
+    if (cmbProduto.getItemCount() == 0) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Não há produtos cadastrados para associar à embalagem.", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
     }
 
+    // Obtem o índice do produto selecionado
+    int indexProduto = cmbProduto.getSelectedIndex();
+    Produto produtoSelecionado = BancoDeDadosFake.getProdutos().get(indexProduto);
+
+    // Pega os dados dos campos
+    String tipo = cmbTipo.getSelectedItem().toString();
+    double largura = Double.parseDouble(txtLargura.getText());
+    double altura = Double.parseDouble(txtAltura.getText());
+    double comprimento = Double.parseDouble(txtComprimento.getText());
+    double peso = Double.parseDouble(txtPeso.getText());
+    boolean empilhavel = chboxEmpilhavel.isSelected();
+    String observacoes = jTextArea1.getText();
+
+    // Cria objeto embalagem
+    Embalagem embalagem = new Embalagem(produtoSelecionado, tipo, altura, largura, comprimento, peso, empilhavel, observacoes);
+
+    // Salva no banco de dados fake
+    BancoDeDadosFake banco = new BancoDeDadosFake();
+    if (banco.addEmbalagem(embalagem)) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Embalagem cadastrada com sucesso!");
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Erro ao cadastrar embalagem.", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,7 +95,11 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Cadastrar");
 
-        cmbProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbProdutoActionPerformed(evt);
+            }
+        });
 
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "CAIXA", "    TAMBOR", "    PALETE", "    SACO", "    CONTAINER" }));
 
@@ -87,6 +134,11 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         jLabel5.setText("Cadastro de Embalagem");
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar");
 
@@ -194,6 +246,14 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
     private void chboxEmpilhavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chboxEmpilhavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chboxEmpilhavelActionPerformed
+
+    private void cmbProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbProdutoActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        CadastrarEmbalagem();
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
