@@ -4,11 +4,10 @@
  */
 package cadastro_transportadora.model;
 
-public class TesteCadastro {
+public class TesteCadastro_naoFazParte {
     public static void main(String[] args) {
         BancoDeDadosFake banco = new BancoDeDadosFake();
-
-        // Criar e cadastrar veículo
+        
         Veiculo veiculo = new Veiculo();
         veiculo.setId(1);
         veiculo.setNome("Caminhão Ford");
@@ -23,7 +22,6 @@ public class TesteCadastro {
 
         banco.addVeiculo(veiculo);
 
-        // Criar e cadastrar produto
         Produto produto = new Produto();
         produto.setId(1);
         produto.setNome("Geladeira");
@@ -40,7 +38,7 @@ public class TesteCadastro {
 
         banco.addProduto(produto);
 
-        // Criar e cadastrar embalagem
+
         Embalagem embalagem = new Embalagem();
         embalagem.setProdutoAssociado(produto);
         embalagem.setTipo("Caixa");
@@ -53,7 +51,7 @@ public class TesteCadastro {
 
         banco.addEmbalagem(embalagem);
 
-        // Mostrar resultados
+  
         System.out.println("Veículos cadastrados:");
         for (Veiculo v : BancoDeDadosFake.getVeiculos()) {
             System.out.println("- " + v.getNome() + " (" + v.getPlaca() + ")");

@@ -22,25 +22,25 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         initComponents();
         ArrayList<Produto> produtos = BancoDeDadosFake.getProdutos();
         
-        //percorro a lista de cursos do BD
+     
         for (Produto produto : produtos) {
-            //para cada curso, adiciono o nome do curso no ComboBox
+
             cmbProduto.addItem(produto.getNome());
 
         }
     }
     private void CadastrarEmbalagem(){
-     // Verifica se há produtos disponíveis no ComboBox
+
     if (cmbProduto.getItemCount() == 0) {
         javax.swing.JOptionPane.showMessageDialog(this, "Não há produtos cadastrados para associar à embalagem.", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
         return;
     }
 
-    // Obtem o índice do produto selecionado
+
     int indexProduto = cmbProduto.getSelectedIndex();
     Produto produtoSelecionado = BancoDeDadosFake.getProdutos().get(indexProduto);
 
-    // Pega os dados dos campos
+
     String tipo = cmbTipo.getSelectedItem().toString();
     double largura = Double.parseDouble(txtLargura.getText());
     double altura = Double.parseDouble(txtAltura.getText());
@@ -49,10 +49,9 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
     boolean empilhavel = chboxEmpilhavel.isSelected();
     String observacoes = jTextArea1.getText();
 
-    // Cria objeto embalagem
+
     Embalagem embalagem = new Embalagem(produtoSelecionado, tipo, altura, largura, comprimento, peso, empilhavel, observacoes);
 
-    // Salva no banco de dados fake
     BancoDeDadosFake banco = new BancoDeDadosFake();
     if (banco.addEmbalagem(embalagem)) {
         javax.swing.JOptionPane.showMessageDialog(this, "Embalagem cadastrada com sucesso!");
@@ -90,6 +89,7 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        btnTeste = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMaximizable(true);
@@ -142,6 +142,13 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
 
         btnLimpar.setText("Limpar");
 
+        btnTeste.setText("Preencher/Teste");
+        btnTeste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTesteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -174,7 +181,9 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLimpar))
+                        .addComponent(btnLimpar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTeste))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -219,7 +228,8 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar))
+                    .addComponent(btnLimpar)
+                    .addComponent(btnTeste))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -255,10 +265,26 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
         CadastrarEmbalagem();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
+         if (cmbProduto.getItemCount() == 0) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Adicione um produto antes de testar.", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    cmbProduto.setSelectedIndex(0);
+    cmbTipo.setSelectedItem("CAIXA");
+    txtLargura.setText("30.5");
+    txtAltura.setText("20.0");
+    txtComprimento.setText("40.0");
+    txtPeso.setText("2.5");
+    chboxEmpilhavel.setSelected(true);
+    jTextArea1.setText("Embalagem de teste gerada automaticamente.");
+    }//GEN-LAST:event_btnTesteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnTeste;
     private javax.swing.JCheckBox chboxEmpilhavel;
     private javax.swing.JComboBox<String> cmbProduto;
     private javax.swing.JComboBox<String> cmbTipo;

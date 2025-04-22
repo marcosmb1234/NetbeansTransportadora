@@ -85,6 +85,7 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         jLabel14 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        btnTeste = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMaximizable(true);
@@ -151,6 +152,13 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
 
         btnLimpar.setText("Limpar");
 
+        btnTeste.setText("Preencher/Teste");
+        btnTeste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTesteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -164,7 +172,9 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLimpar))
+                                .addComponent(btnLimpar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnTeste))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,7 +266,8 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar))
+                    .addComponent(btnLimpar)
+                    .addComponent(btnTeste))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -296,10 +307,25 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
         cadastrarVeiculo();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
+        txtID.setText("101");
+    txtNome.setText("TransBike");
+    txtPlaca.setText("ABC-1234");
+    txtModelo.setText("CargoMax 500");
+    cmbTipo.setSelectedItem("Caminhão Baú");
+    txtAltura.setText("2.8");
+    txtLargura.setText("2.5");
+    txtComprimento.setText("7.0");
+    txtCapacidade.setText("15000");
+    txtAreaObservacoes.setText("Veículo utilizado para transporte de cargas secas em longas distâncias. Motor revisado.");
+
+    }//GEN-LAST:event_btnTesteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnTeste;
     private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

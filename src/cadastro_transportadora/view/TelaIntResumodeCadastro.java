@@ -5,9 +5,6 @@
 package cadastro_transportadora.view;
 
 import cadastro_transportadora.model.BancoDeDadosFake;
-import cadastro_transportadora.model.Embalagem;
-import cadastro_transportadora.model.Produto;
-import cadastro_transportadora.model.Veiculo;
 
 /**
  *
@@ -23,26 +20,33 @@ public class TelaIntResumodeCadastro extends javax.swing.JInternalFrame {
         carregarResumo();
     }
     private void carregarResumo() {
-    StringBuilder veiculos = new StringBuilder();
-    for (Veiculo v : BancoDeDadosFake.getVeiculos()) {
-        veiculos.append(v.toString()).append("\n");
-    }
-    txtAreaVeiculosTipoTotal1.setText(veiculos.toString());
+    StringBuilder veiculoResumo = new StringBuilder();
+    BancoDeDadosFake.getVeiculosPorTipo().forEach((tipo, qtd) -> {
+        veiculoResumo.append("Tipo: ").append(tipo).append(" - Quantidade: ").append(qtd).append("\n");
+    });
+    veiculoResumo.append("Total: ").append(BancoDeDadosFake.getTotalVeiculos());
+    txtAreaVeiculosTipoTotal1.setText(veiculoResumo.toString());
 
-    StringBuilder produtos = new StringBuilder();
-    for (Produto p : BancoDeDadosFake.getProdutos()) {
-        produtos.append(p.toString()).append("\n");
-    }
-    txtAreaProdutosTipoTotal1.setText(produtos.toString());
+    StringBuilder produtoResumo = new StringBuilder();
+    BancoDeDadosFake.getProdutosPorTipo().forEach((tipo, qtd) -> {
+        produtoResumo.append("Tipo: ").append(tipo).append(" - Quantidade: ").append(qtd).append("\n");
+    });
+    produtoResumo.append("Total: ").append(BancoDeDadosFake.getTotalProdutos());
+    txtAreaProdutosTipoTotal1.setText(produtoResumo.toString());
 
-    StringBuilder embalagens = new StringBuilder();
-    for (Embalagem e : BancoDeDadosFake.getEmbalagens()) {
-        embalagens.append(e.toString()).append("\n");
-    }
-    txtAreaEmbalagensTipoTotal1.setText(embalagens.toString());
+    StringBuilder embalagemResumo = new StringBuilder();
+    BancoDeDadosFake.getEmbalagensPorTipo().forEach((tipo, qtd) -> {
+        embalagemResumo.append("Tipo: ").append(tipo).append(" - Quantidade: ").append(qtd).append("\n");
+    });
+    embalagemResumo.append("Total: ").append(BancoDeDadosFake.getTotalEmbalagens());
+    txtAreaEmbalagensTipoTotal1.setText(embalagemResumo.toString());
+
+    txtNumFamiliaProdutos1.setText(String.valueOf(BancoDeDadosFake.getTotalFamilias()));
+
+    txtNumTiposProdutos1.setText(String.valueOf(BancoDeDadosFake.getTotalTiposProduto()));
+
+    txtNumLotesCadastrados1.setText(String.valueOf(BancoDeDadosFake.getTotalLotes()));
 }
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

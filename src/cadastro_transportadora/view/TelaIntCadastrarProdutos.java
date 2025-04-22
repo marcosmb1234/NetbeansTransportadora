@@ -92,6 +92,7 @@ private void cadastrarProduto() {
         btnCadastrar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        btnTeste = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setMaximizable(true);
@@ -158,6 +159,13 @@ private void cadastrarProduto() {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "Alimento", "Eletrônico", "Mobília", "Medicamento", "Material de Construção", "Roupa", "Cosmético", "Limpeza" }));
 
+        btnTeste.setText("Preencher/Teste");
+        btnTeste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTesteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -171,7 +179,9 @@ private void cadastrarProduto() {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLimpar))
+                                .addComponent(btnLimpar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnTeste))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -274,7 +284,8 @@ private void cadastrarProduto() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
-                    .addComponent(btnLimpar))
+                    .addComponent(btnLimpar)
+                    .addComponent(btnTeste))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -310,10 +321,26 @@ private void cadastrarProduto() {
         cadastrarProduto();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
+         txtID.setText("101");
+    txtNome.setText("Produto Exemplo");
+    txtDescricao.setText("Produto de teste");
+    txtFamilia.setText("Família A");
+    txtLote.setText("L123");
+    txtLargura.setText("10.5");
+    txtAltura.setText("5.2");
+    txtComprimento.setText("20.0");
+    txtPeso.setText("2.3");
+    cmbGrauFrag.setSelectedItem("Moderadamente Frágil");
+    jComboBox1.setSelectedItem("Eletrônico");
+    txtAreaObservacoes.setText("Esse produto é um exemplo gerado automaticamente.");
+    }//GEN-LAST:event_btnTesteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnTeste;
     private javax.swing.JComboBox<String> cmbGrauFrag;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
