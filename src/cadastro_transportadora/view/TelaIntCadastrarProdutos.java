@@ -5,6 +5,8 @@
 package cadastro_transportadora.view;
 
 import cadastro_transportadora.model.BancoDeDadosFake;
+import static cadastro_transportadora.model.DadosTeste.dadosFicProd;
+
 import cadastro_transportadora.model.Produto;
 import java.awt.HeadlessException;
 
@@ -20,6 +22,7 @@ public class TelaIntCadastrarProdutos extends javax.swing.JInternalFrame {
     public TelaIntCadastrarProdutos() {
         initComponents();
     }
+    private int indiceTeste = 0;
 private void cadastrarProduto() {
     try {
         int id = Integer.parseInt(txtID.getText());
@@ -157,7 +160,7 @@ private void cadastrarProduto() {
 
         btnLimpar.setText("Limpar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "Alimento", "Eletrônico", "Mobília", "Medicamento", "Material de Construção", "Roupa", "Cosmético", "Limpeza" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercadoria para revenda", "Materia Prima", "Embalagem", "Produto em Processo", "Produto Acabado", "Sub-Produto", "Serviços", "Outros Insumos" }));
 
         btnTeste.setText("Preencher/Teste");
         btnTeste.addActionListener(new java.awt.event.ActionListener() {
@@ -322,18 +325,26 @@ private void cadastrarProduto() {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
-         txtID.setText("101");
-    txtNome.setText("Produto Exemplo");
-    txtDescricao.setText("Produto de teste");
-    txtFamilia.setText("Família A");
-    txtLote.setText("L123");
-    txtLargura.setText("10.5");
-    txtAltura.setText("5.2");
-    txtComprimento.setText("20.0");
-    txtPeso.setText("2.3");
-    cmbGrauFrag.setSelectedItem("Moderadamente Frágil");
-    jComboBox1.setSelectedItem("Eletrônico");
-    txtAreaObservacoes.setText("Esse produto é um exemplo gerado automaticamente.");
+        if (indiceTeste == dadosFicProd.length) {
+        indiceTeste = 0; // reinicia caso passe do tamanho
+    }
+
+    String[] dados = dadosFicProd[indiceTeste];
+
+    txtID.setText(dados[0]);
+    txtNome.setText(dados[1]);
+    txtDescricao.setText(dados[2]);
+    txtFamilia.setText(dados[3]);
+    jComboBox1.setSelectedItem(dados[4]);
+    txtLote.setText(dados[5]);
+    txtLargura.setText(dados[6]);
+    txtAltura.setText(dados[7]);
+    txtComprimento.setText(dados[8]);
+    txtPeso.setText(dados[9]);
+    cmbGrauFrag.setSelectedItem(dados[10]);
+    txtAreaObservacoes.setText(dados[11]);
+
+    indiceTeste++;
     }//GEN-LAST:event_btnTesteActionPerformed
 
 

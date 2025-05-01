@@ -5,6 +5,7 @@
 package cadastro_transportadora.view;
 
 import cadastro_transportadora.model.BancoDeDadosFake;
+import static cadastro_transportadora.model.DadosTeste.dadosFicEmb;
 import cadastro_transportadora.model.Embalagem;
 import cadastro_transportadora.model.Produto;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
     /**
      * Creates new form TelaIntCadastrarEmbalagens
      */
+    
     public TelaIntCadastrarEmbalagens() {
         initComponents();
         ArrayList<Produto> produtos = BancoDeDadosFake.getProdutos();
@@ -29,6 +31,8 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
 
         }
     }
+    private int indiceTeste = 0;
+    
     private void CadastrarEmbalagem(){
 
     if (cmbProduto.getItemCount() == 0) {
@@ -101,7 +105,7 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
             }
         });
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Outro", "CAIXA", "    TAMBOR", "    PALETE", "    SACO", "    CONTAINER" }));
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OUTRO", "CAIXA", "TAMBOR", "PALETE", "SACO", "CONTAINER" }));
 
         chboxEmpilhavel.setText("Empilhável");
         chboxEmpilhavel.addActionListener(new java.awt.event.ActionListener() {
@@ -266,18 +270,27 @@ public class TelaIntCadastrarEmbalagens extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
-         if (cmbProduto.getItemCount() == 0) {
+        if (cmbProduto.getItemCount() == 0) {
         javax.swing.JOptionPane.showMessageDialog(this, "Adicione um produto antes de testar.", "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
         return;
     }
-    cmbProduto.setSelectedIndex(0);
-    cmbTipo.setSelectedItem("CAIXA");
-    txtLargura.setText("30.5");
-    txtAltura.setText("20.0");
-    txtComprimento.setText("40.0");
-    txtPeso.setText("2.5");
-    chboxEmpilhavel.setSelected(true);
-    jTextArea1.setText("Embalagem de teste gerada automaticamente.");
+
+    if (indiceTeste == dadosFicEmb.length) {
+        indiceTeste = 0; // reinicia
+    }
+
+    String[] dados = dadosFicEmb[indiceTeste];
+
+    cmbProduto.setSelectedIndex(0); // ou o índice correspondente ao produto desejado
+    cmbTipo.setSelectedItem(dados[0]);
+    txtLargura.setText(dados[1]);
+    txtAltura.setText(dados[2]);
+    txtComprimento.setText(dados[3]);
+    txtPeso.setText(dados[4]);
+    chboxEmpilhavel.setSelected(Boolean.parseBoolean(dados[5]));
+    jTextArea1.setText(dados[6]);
+
+    indiceTeste++; // próxima vez
     }//GEN-LAST:event_btnTesteActionPerformed
 
 

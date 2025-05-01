@@ -93,17 +93,26 @@ public class TelaIntResumodeCadastro extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Número de lotes cadastrados:");
 
+        txtAreaVeiculosTipoTotal1.setEditable(false);
         txtAreaVeiculosTipoTotal1.setColumns(20);
         txtAreaVeiculosTipoTotal1.setRows(5);
         jScrollPane6.setViewportView(txtAreaVeiculosTipoTotal1);
 
+        txtAreaProdutosTipoTotal1.setEditable(false);
         txtAreaProdutosTipoTotal1.setColumns(20);
         txtAreaProdutosTipoTotal1.setRows(5);
         jScrollPane7.setViewportView(txtAreaProdutosTipoTotal1);
 
+        txtAreaEmbalagensTipoTotal1.setEditable(false);
         txtAreaEmbalagensTipoTotal1.setColumns(20);
         txtAreaEmbalagensTipoTotal1.setRows(5);
         jScrollPane8.setViewportView(txtAreaEmbalagensTipoTotal1);
+
+        txtNumFamiliaProdutos1.setEditable(false);
+
+        txtNumTiposProdutos1.setEditable(false);
+
+        txtNumLotesCadastrados1.setEditable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,7 +164,7 @@ public class TelaIntResumodeCadastro extends javax.swing.JInternalFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(txtNumFamiliaProdutos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -184,7 +193,7 @@ public class TelaIntResumodeCadastro extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         pack();

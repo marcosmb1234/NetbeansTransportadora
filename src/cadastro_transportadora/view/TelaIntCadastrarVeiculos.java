@@ -5,6 +5,7 @@
 package cadastro_transportadora.view;
 
 import cadastro_transportadora.model.BancoDeDadosFake;
+import static cadastro_transportadora.model.DadosTeste.dadosFicVec;
 import cadastro_transportadora.model.Veiculo;
 
 /**
@@ -19,6 +20,9 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
     public TelaIntCadastrarVeiculos() {
         initComponents();
     }
+
+private int indiceTeste = 0;
+
     private void cadastrarVeiculo() {
     try {
         int id = Integer.parseInt(txtID.getText());
@@ -308,17 +312,24 @@ public class TelaIntCadastrarVeiculos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnTesteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTesteActionPerformed
-        txtID.setText("101");
-    txtNome.setText("TransBike");
-    txtPlaca.setText("ABC-1234");
-    txtModelo.setText("CargoMax 500");
-    cmbTipo.setSelectedItem("Caminhão Baú");
-    txtAltura.setText("2.8");
-    txtLargura.setText("2.5");
-    txtComprimento.setText("7.0");
-    txtCapacidade.setText("15000");
-    txtAreaObservacoes.setText("Veículo utilizado para transporte de cargas secas em longas distâncias. Motor revisado.");
+    if (indiceTeste == dadosFicVec.length) {
+        indiceTeste = 0; // reinicia caso passe do tamanho
+    }
 
+    String[] dados = dadosFicVec[indiceTeste];
+
+    txtID.setText(dados[0]);
+    txtNome.setText(dados[1]);
+    txtPlaca.setText(dados[2]);
+    txtModelo.setText(dados[3]);
+    cmbTipo.setSelectedItem(dados[4]);
+    txtAltura.setText(dados[5]);
+    txtLargura.setText(dados[6]);
+    txtComprimento.setText(dados[7]);
+    txtCapacidade.setText(dados[8]);
+    txtAreaObservacoes.setText(dados[9]);
+
+    indiceTeste++; // incrementa para próxima vez
     }//GEN-LAST:event_btnTesteActionPerformed
 
 
