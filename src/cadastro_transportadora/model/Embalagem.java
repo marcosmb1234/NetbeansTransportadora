@@ -5,20 +5,22 @@
 package cadastro_transportadora.model;
 
 /**
- *
+ *Classe para a embalagem, com seus dado
  * @author marco
  */
+ 
 public class Embalagem {
     private Produto produtoAssociado;
-    private String tipo; // Ex: caixa, tambor, etc
+    private String tipo;
     private double altura;
     private double largura;
     private double comprimento;
     private double peso;
     private boolean empilhavel;
     private String observacoes;
-public Embalagem() {
-}
+    
+    public Embalagem() {
+    }
     public Embalagem(Produto produtoAssociado, String tipo, double altura, double largura, double comprimento, double peso, boolean empilhavel, String observacoes) {
         this.produtoAssociado = produtoAssociado;
         this.tipo = tipo;

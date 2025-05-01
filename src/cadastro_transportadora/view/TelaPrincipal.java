@@ -9,20 +9,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 
-/**
- *
- * @author marco
- */
+
 public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
+        this.setSize(800, 700); // é o tamanho de quando abre a tela
         TelaIntSobreOTrabalho telaInterna = new TelaIntSobreOTrabalho();
         desktop.add(telaInterna);
         telaInterna.setVisible(true);
         telaInterna.setClosable(false);
         telaInterna.setMaximizable(false);
         try {
-    telaInterna.setMaximum(true); //é o negocio de aumentar a tela
+        telaInterna.setMaximum(true); //é o negocio de aumentar a tela
 } catch (PropertyVetoException ex) {
     Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
 }

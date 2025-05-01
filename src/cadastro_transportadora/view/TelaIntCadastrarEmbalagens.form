@@ -152,9 +152,6 @@
               <StringArray count="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbProdutoActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -188,9 +185,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Empilh&#xe1;vel"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chboxEmpilhavelActionPerformed"/>
-          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="txtAreaObservacoes">
           <AuxValues>
